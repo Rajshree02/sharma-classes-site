@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Hero = () => {
+const Slider = () => {
   return (
     <main id="home" className="hero">
       <div className="container hero-grid">
@@ -25,13 +25,11 @@ const Hero = () => {
           <div className="score">
             <div className="chip"><strong>25 Years</strong><small> Teaching Experience</small></div>
             <div className="chip"><strong>4.9★</strong><small>Average Rating</small></div>
-            {/* <div className="chip"><strong>12 wks</strong><small>Signature Sprint</small></div> */}
           </div>
-          {/* <div className="note">Backed by frameworks from behavioral science, habit design, and mindful leadership.</div> */}
         </aside>
       </div>
     </main>
   );
 };
 
-export default Hero;
+export default Slider;

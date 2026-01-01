@@ -11,13 +11,11 @@ const Header = () => {
         <nav aria-label="Primary">
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#programs">Programs</a></li>
+            <li><a href="#courses">Courses</a></li>
             <li><a href="#about">About</a></li>
-            {/* <li><a href="#testimonials">Testimonials</a></li> */}
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Contact us</a></li>
           </ul>
         </nav>
-        <a className="cta" href="http://127.0.0.1:5500/login.html">Login</a>
       </div>
     </header>
   );
