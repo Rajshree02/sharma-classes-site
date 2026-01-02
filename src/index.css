@@ -22,13 +22,22 @@ body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   color: var(--text);
-  background: var(--gradient-1),
-              var(--gradient-2),
-              var(--gradient-3),
-              var(--bg);
+  background: var(--bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.slider-section {
+  background: var(--gradient-1);
+}
+
+.programs-section {
+  background: var(--gradient-2);
+}
+
+.about-section {
+  background: var(--gradient-3);
 }
 
 a { color: inherit; text-decoration: none; }

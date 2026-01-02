@@ -9,9 +9,15 @@ function App() {
   return (
     <>
       <Header />
-      <Slider />
-      <Programs />
-      <About />
+      <div className="slider-section">
+        <Slider />
+      </div>
+      <div className="programs-section">
+        <Programs />
+      </div>
+      <div className="about-section">
+        <About />
+      </div>
       <Footer />
     </>
   );
