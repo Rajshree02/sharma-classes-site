@@ -8,14 +8,14 @@ const SimpleSlider = () => {
         dots: true,
         infinite: true,
         speed: 5,
+        arrows: false,
         slidesToShow: 1,
-        slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 5000
     };
 
     return (
-        <Slider className="container" {...settings}>
+        <Slider className="container slider" {...settings}>
             <div className="container">
                 <div>
                     <span className="eyebrow">COACHING • MINDSET • PERFORMANCE</span>
@@ -35,7 +35,7 @@ const SimpleSlider = () => {
                     </div>
                 </div>
 
-                <aside className="hero-card" aria-label="Quick stats">
+                <aside className="centered-section hero-card" aria-label="Quick stats">
                     <div className="score">
                         <div className="chip"><strong>25 Years</strong><small> Teaching Experience</small></div>
                         <div className="chip"><strong>4.9★</strong><small>Average Rating</small></div>
