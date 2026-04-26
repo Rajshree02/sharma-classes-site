@@ -92,6 +92,7 @@ nav a:hover { color: var(--text); }
 
 .hero-actions { display: flex; gap: 14px; margin-top: 22px; flex-wrap: wrap; }
 .btn-ghost { display: inline-flex; align-items: center; gap: 10px; padding: 11px 16px; border-radius: 999px; border: 1px solid var(--line); color: var(--text); background: rgba(255,255,255,0.02); }
+.btn-register { display: inline-flex; align-items: center; margin-left: 45% ;gap: 10px; padding: 11px 16px; border-radius: 999px; border: 1px solid var(--line); color: var(--text); background: rgba(255,255,255,0.1); }
 .btn-ghost:hover { border-color: rgba(255,255,255,0.16); background: rgba(255,255,255,0.04); }
 
 .hero-card {
