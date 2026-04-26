@@ -1,11 +1,14 @@
 import React from 'react';
+import logo from '../assets/infinity_and_beyond.png';
 
 const Header = () => {
   return (
     <header>
       <div className="container nav">
         <div className="brand">
-          <div className="logo" aria-hidden="true"></div>
+          <div className="logo" aria-hidden="true">
+              <img src={logo} alt="Sharma Classes Logo"/>
+          </div>
           <a href="#" aria-label="Elevate Coaching Home">Sharma Classes</a>
         </div>
         <nav aria-label="Primary">

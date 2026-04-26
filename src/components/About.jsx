@@ -1,11 +1,12 @@
 import React from 'react';
+import image from "../assets/director_photo.jpeg";
 
 const About = () => {
   return (
     <section id="about">
       <div className="container about">
         <div>
-          <div className="avatar" aria-hidden="true"><div className="avatar-inner"></div></div>
+            <img src={image} alt="Sharma Classes Logo"/>
         </div>
         <div>
           <h2 className="section-title">Harish Sharma</h2> <br /><h3> Founder and Mentor of Sharma Classes</h3> <br />
