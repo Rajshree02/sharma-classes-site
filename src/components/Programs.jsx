@@ -49,10 +49,16 @@ const Programs = ({ onRegisterClick }) => {
                 <button 
                     className="btn-register" 
                     onClick={onRegisterClick}
-                    style={{ cursor: 'pointer', border: 'none' }} // Ensures it keeps her styling but shows a clickable hand cursor
-                >
-                    Register here
-                </button>
+                    style={{ 
+                    cursor: 'pointer', 
+                    border: 'none',
+                    fontSize: '19px',       /* ◄ Bumps up the text size (Default is likely 12px-14px) */
+                    fontWeight: '600',      /* ◄ Makes the text slightly bolder so it stands out */
+                    padding: '12px 28px'    /* ◄ Optional: Expands the pill padding slightly if it looks squished */
+                    }} 
+>
+    Register here
+</button>
             </div>
         </section>
     );
