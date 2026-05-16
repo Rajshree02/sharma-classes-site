@@ -1,5 +1,5 @@
 import Register from './components/Register';
-import React from 'react';
+import React, { useState } from 'react'; 
 import Header from './components/Header';
 import Slider from './components/Slider.jsx';
 import Programs from './components/Programs';
@@ -7,26 +7,42 @@ import About from './components/About';
 import Footer from './components/Footer';
 
 function App() {
+  // 1. Tracks whether the pop-up is open (true) or closed (false)
+  const [showRegister, setShowRegister] = useState(false);
+
+  const openRegisterForm = () => {
+    setShowRegister(true);
+  };
+
   return (
     <>
-      <Header />
+      {/* 2. Pass the trigger function to the Header */}
+      <Header onRegisterClick={openRegisterForm} />
       
       <div className="slider-section">
-        <Slider />
+        {/* Pass showRegister as a prop so the slider knows if the form is open */}
+        <Slider isPaused={showRegister} />
       </div>
 
       <div className="programs-section">
-        <Programs />
+        {/* ◄ CHANGED HERE: Pass the function down to your sister's programs block */}
+        <Programs onRegisterClick={openRegisterForm} />
       </div>
 
       <div className="about-section">
         <About />
       </div>
 
-      {/* Adding the Register component here so students can sign up */}
-      <div className="register-section">
-        <Register />
-      </div>
+      {/* 3. This wrapper will now instantly float over the screen when showRegister is true */}
+      {showRegister && (
+        <div className="register-section">
+          <div className="register-modal-content">
+            {/* Clean close button to hide the form again */}
+            <button className="close-btn" onClick={() => setShowRegister(false)}>✕ Close</button>
+            <Register />
+          </div>
+        </div>
+      )}
 
       <Footer />
     </>

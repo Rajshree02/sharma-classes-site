@@ -203,3 +203,43 @@ footer { padding: 40px 0; border-top: 1px solid var(--line); color: var(--muted)
 @media (prefers-reduced-motion: reduce) {
   .cta, .card { transition: none; }
 }
+
+/* Forces the registration section to lock onto the viewport screen */
+.register-section {
+  position: fixed; /* ◄ Crucial: Tears it out of the regular page stacking order */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75); /* Deep dark tint to shade out your background sliders */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* Guarantees it floats over everything else on the page */
+}
+
+/* Spaces out your Register container card elements cleanly */
+.register-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  padding: 10px;
+}
+
+/* Custom styling for your close button so it sits neatly inside your slate block */
+.close-btn {
+  position: absolute;
+  top: 55px; /* Adjusts it down slightly relative to your register container's padding */
+  right: 25px;
+  background: none;
+  border: none;
+  color: #94a3b8; /* Muted slate grey text */
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 100000;
+}
+
+.close-btn:hover {
+  color: #ffffff; /* Highlights bright white when hovering to close */
+}

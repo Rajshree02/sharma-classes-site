@@ -3,14 +3,16 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const SimpleSlider = () => {
+// 1. ADDED: Receive the 'isPaused' prop from App.jsx right here
+const SimpleSlider = ({ isPaused }) => {
     const settings = {
         dots: true,
         infinite: true,
         speed: 5,
         arrows: false,
         slidesToShow: 1,
-        autoplay: true,
+        // 2. CHANGED: If isPaused is true, autoplay turns off. Otherwise, it runs!
+        autoplay: !isPaused,
         autoplaySpeed: 5000
     };
 
@@ -42,6 +44,7 @@ const SimpleSlider = () => {
                     </div>
                 </aside>
             </div>
+            
             <div className="container">
                 <div>
                     <span className="eyebrow">SLIDE 2</span>
@@ -49,6 +52,7 @@ const SimpleSlider = () => {
                     <p className="subhead">This is the second slide of the slider.</p>
                 </div>
             </div>
+            
             <div className="container">
                 <div>
                     <span className="eyebrow">SLIDE 3</span>

@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Programs = () => {
+// 1. CHANGED: Receive the 'onRegisterClick' prop inside the brackets here so it can listen to App.jsx
+const Programs = ({ onRegisterClick }) => {
     return (
         <section id="programs">
             <div className="container">
@@ -44,7 +45,14 @@ const Programs = () => {
                 </div>
             </div>
             <div className="hero-actions">
-                <a href="#registration" className="btn-register">Register here</a>
+                {/* 2. CHANGED: Converted from an <a> tag to a <button> and attached the onClick trigger */}
+                <button 
+                    className="btn-register" 
+                    onClick={onRegisterClick}
+                    style={{ cursor: 'pointer', border: 'none' }} // Ensures it keeps her styling but shows a clickable hand cursor
+                >
+                    Register here
+                </button>
             </div>
         </section>
     );

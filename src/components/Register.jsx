@@ -23,7 +23,7 @@ const Register = () => {
 
   return (
     <div style={styles.container}>
-      <h2>Register for Sharma Classes</h2>
+      <h2 style={{ color: 'white' }}>Register for Sharma Classes</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
         <input
           type="text"
@@ -63,10 +63,10 @@ const Register = () => {
 
 // Simple styling to make it look decent immediately
 const styles = {
-  container: { padding: '40px', textAlign: 'center', backgroundColor: '#f9f9f9', borderRadius: '8px' },
+  container: { padding: '40px', textAlign: 'center', backgroundColor: 'black', borderRadius: '8px' },
   form: { display: 'flex', flexDirection: 'column', maxWidth: '400px', margin: '0 auto' },
   input: { padding: '12px', marginBottom: '15px', borderRadius: '4px', border: '1px solid #ccc' },
-  button: { padding: '12px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }
+  button: { padding: '12px', backgroundColor: '#007bff', color: 'black', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }
 };
 
 export default Register;
