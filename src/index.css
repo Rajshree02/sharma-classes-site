@@ -205,25 +205,127 @@ footer { padding: 40px 0; border-top: 1px solid var(--line); color: var(--muted)
 }
 
 /* Forces the registration section to lock onto the viewport screen */
+/* 1. The main backdrop screen overlay */
 .register-section {
-  position: fixed; /* ◄ Crucial: Tears it out of the regular page stacking order */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.75); /* Deep dark tint to shade out your background sliders */
+  background-color: rgba(0, 0, 0, 0.65); /* Dark shade tint */
+  backdrop-filter: blur(8px); /* Premium glass blur effect */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 99999; /* Guarantees it floats over everything else on the page */
+  z-index: 99999;
 }
 
-/* Spaces out your Register container card elements cleanly */
+/* 2. The main container holding both columns */
 .register-modal-content {
   position: relative;
-  width: 100%;
-  max-width: 450px;
-  padding: 10px;
+  background: #0f172a; /* Deep slate dark background */
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 850px; /* Wider box to easily fit two columns side-by-side */
+  display: flex; /* ◄ MAGIC: Snaps columns side-by-side */
+  flex-direction: row;
+  overflow: hidden; /* Ensures corner curves stay clean */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* 3. The new Left Column (Quick Info Hub) */
+.modal-info-side {
+  flex: 1; /* Takes up exactly 50% width */
+  background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); /* Slight royal indigo tint */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid #1e293b;
+}
+
+.modal-info-side h3 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.modal-info-side p {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-item label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #38bdf8; /* Vibrant light blue header labels */
+  margin-bottom: 4px;
+}
+
+.contact-item span {
+  color: #e2e8f0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* 4. The Right Column (Your existing Register Form wrapper) */
+.modal-form-side {
+  flex: 1; /* Takes up the other 50% width */
+  padding: 40px;
+  background-color: #0f172a;
+}
+
+/* 5. Clean layout adjustments for the small close button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: #94a3b8;
+  padding: 6px 30px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  z-index: 100000;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* 6. RESPONSIVE DESIGN: Stacks into a single column on mobile screens */
+@media (max-width: 768px) {
+  .register-modal-content {
+    flex-direction: column;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal-info-side {
+    border-right: none;
+    border-bottom: 1px solid #1e293b;
+    padding: 30px;
+  }
+  .modal-form-side {
+    padding: 30px;
+  }
 }
 
 /* Custom styling for your close button so it sits neatly inside your slate block */
@@ -242,4 +344,8 @@ footer { padding: 40px 0; border-top: 1px solid var(--line); color: var(--muted)
 
 .close-btn:hover {
   color: #ffffff; /* Highlights bright white when hovering to close */
+}
+/* If form-only mode is active, shrink the max-width to make a perfect single-column card */
+.register-modal-content.form-only-mode {
+  max-width: 450px; 
 }

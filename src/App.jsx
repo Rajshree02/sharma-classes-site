@@ -7,39 +7,65 @@ import About from './components/About';
 import Footer from './components/Footer';
 
 function App() {
-  // 1. Tracks whether the pop-up is open (true) or closed (false)
+  // 1. CHANGED: State now stores 'split', 'form', or false
   const [showRegister, setShowRegister] = useState(false);
-
-  const openRegisterForm = () => {
-    setShowRegister(true);
-  };
 
   return (
     <>
-      {/* 2. Pass the trigger function to the Header */}
-      <Header onRegisterClick={openRegisterForm} />
+      {/* 2. When clicking Contact us, open the "split" view */}
+      <Header onRegisterClick={() => setShowRegister('split')} />
       
       <div className="slider-section">
-        {/* Pass showRegister as a prop so the slider knows if the form is open */}
-        <Slider isPaused={showRegister} />
+        <Slider isPaused={!!showRegister} />
       </div>
 
       <div className="programs-section">
-        {/* ◄ CHANGED HERE: Pass the function down to your sister's programs block */}
-        <Programs onRegisterClick={openRegisterForm} />
+        {/* 3. When clicking Register here, open the pure "form" view */}
+        <Programs onRegisterClick={() => setShowRegister('form')} />
       </div>
 
       <div className="about-section">
         <About />
       </div>
 
-      {/* 3. This wrapper will now instantly float over the screen when showRegister is true */}
+      {/* 4. Only show the modal if showRegister has a value */}
       {showRegister && (
         <div className="register-section">
-          <div className="register-modal-content">
-            {/* Clean close button to hide the form again */}
+          {/* ADDED CLASSNAME DYNAMICALLY: Adds a special class if it's form-only mode */}
+          <div className={`register-modal-content ${showRegister === 'form' ? 'form-only-mode' : ''}`}>
+            
             <button className="close-btn" onClick={() => setShowRegister(false)}>✕ Close</button>
-            <Register />
+            
+            {/* 5. CONDITIONAL RENDER: Only show the info side if we are in 'split' mode */}
+            {showRegister === 'split' && (
+              <div className="modal-info-side">
+                <h3>Connect With Us</h3>
+                <p>Have questions about batch timings, fees, or course structures? Reach out directly or leave your details and we'll call you back.</p>
+                
+                <div className="contact-details-list">
+                  <div className="contact-item">
+                    <label>Call or WhatsApp</label>
+                    <span>+91 9850332334</span>
+                  </div>
+                  
+                  <div className="contact-item">
+                    <label>Email Address</label>
+                    <span>harishsharmaiitclasses@gmail.com</span>
+                  </div>
+                  
+                  <div className="contact-item">
+                    <label>Our Location</label>
+                    <span>Nagpur, Maharashtra</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* RIGHT COLUMN: Always visible */}
+            <div className="modal-form-side">
+              <Register />
+            </div>
+
           </div>
         </div>
       )}
