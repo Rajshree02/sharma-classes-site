@@ -298,7 +298,7 @@ footer { padding: 40px 0; border-top: 1px solid var(--line); color: var(--muted)
   background: rgba(255, 255, 255, 0.05);
   border: none;
   color: #94a3b8;
-  padding: 6px 30px;
+  padding: 2px 30px;
   border-radius: 20px;
   font-size: 13px;
   cursor: pointer;
@@ -331,12 +331,12 @@ footer { padding: 40px 0; border-top: 1px solid var(--line); color: var(--muted)
 /* Custom styling for your close button so it sits neatly inside your slate block */
 .close-btn {
   position: absolute;
-  top: 55px; /* Adjusts it down slightly relative to your register container's padding */
+  top: 30px; /* Adjusts it down slightly relative to your register container's padding */
   right: 25px;
   background: none;
   border: none;
   color: #94a3b8; /* Muted slate grey text */
-  font-size: 13px;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
   z-index: 100000;
