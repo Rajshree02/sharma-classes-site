@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-    <>
+      <div id = "home">
       <Header onRegisterClick={() => setShowRegister('split')} />
       
       <div className="slider-section">
@@ -75,7 +75,7 @@ function App() {
       )}
 
       <Footer />
-    </>
+    </div>
   );
 }
 

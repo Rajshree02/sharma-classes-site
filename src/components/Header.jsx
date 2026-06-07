@@ -21,7 +21,7 @@ const Header = ({ onRegisterClick }) => {
             {/* 2. CHANGED: Added onClick={onRegisterClick} and changed href to prevent scrolling */}
             <li>
               <a 
-                href="#!" 
+                href="#" 
                 onClick={(e) => {
                   e.preventDefault(); // Prevents the browser from jumping or reloading the page
                   onRegisterClick();  // Flips the switch to TRUE in App.jsx!

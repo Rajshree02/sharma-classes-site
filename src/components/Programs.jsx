@@ -4,8 +4,9 @@ import React from 'react';
 const Programs = ({ onRegisterClick }) => {
     return (
         <section id="programs">
+            <div id = "courses">
             <div className="container">
-                <h2 className="section-title">Coaching Programs</h2>
+                <h2 className="section-title">Courses</h2>
                 <p className="section-sub">Choose a format that fits your goals and schedule. All programs come with
                     clear milestones.</p>
                 <div className="grid-3">
@@ -59,6 +60,7 @@ const Programs = ({ onRegisterClick }) => {
 >
     Register here
 </button>
+            </div>
             </div>
         </section>
     );

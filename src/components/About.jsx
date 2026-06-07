@@ -11,25 +11,26 @@ const TEST_STUDENTS = [
   },
   {
     id: 2,
-    name: "Gursidak Singh Bassi (BITSAT score - 319)",
-    college: "Birla Institute of Technology and Science Pilani, Hyderabad Campus",
-    branch: "Computer Science and Engineering",
-    review: ""
-  },
-  {
-    id: 3,
-    name: "Mannat Singh Bassi",
-    college: " Sri Venkateshwara College of Architecture (SVCA) , Hyderabad ",
-    branch: "Bachelor of Architecture",
-    review: ""
-  },
-  {
-    id: 4,
     name: "Yash",
     college: "",
     branch: "",
     review: "Thank you for helping me clear my backlog papers. I am truly grateful for your guidance and support during my difficult time. I feel very lucky to have a teacher like you, especially when I didn’t get such guidance after 10th. Wishing you a year filled with success, good health, and happiness"
+  },
+  {
+    id: 3,
+    name: "Gursidak Singh Bassi (BITSAT score - 319)",
+    college: "Birla Institute of Technology and Science Pilani, Hyderabad Campus",
+    branch: "Computer Science and Engineering",
+    
+  },
+  {
+    id: 4,
+    name: "Mannat Singh Bassi",
+    college: " Sri Venkateshwara College of Architecture (SVCA) , Hyderabad ",
+    branch: "Bachelor of Architecture",
+    
   }
+  
 ]
 
 const About = () => {
@@ -55,7 +56,7 @@ const About = () => {
         display: 'flex',
         flexDirection: 'row',        
         flexWrap: 'wrap',            
-        justifyContent: 'center',    
+        justifyContent: 'left',    
         alignItems: 'flex-start',    
         gap: '24px',                 
         maxWidth: '1200px',
