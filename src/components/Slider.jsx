@@ -3,15 +3,14 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// 1. ADDED: Receive the 'isPaused' prop from App.jsx right here
-const SimpleSlider = ({ isPaused }) => {
+// 🚀 UPDATED: Accepting userName as a prop alongside isPaused
+const SimpleSlider = ({ isPaused, userName }) => {
     const settings = {
         dots: true,
         infinite: true,
         speed: 5,
         arrows: false,
         slidesToShow: 1,
-        // 2. CHANGED: If isPaused is true, autoplay turns off. Otherwise, it runs!
         autoplay: !isPaused,
         autoplaySpeed: 5000
     };
@@ -21,19 +20,27 @@ const SimpleSlider = ({ isPaused }) => {
             <div className="container">
                 <div>
                     <span className="eyebrow">COACHING • MINDSET • PERFORMANCE</span>
-                    <h1 className="headline">Providers of <span
-                        className="gradient-text">Holistic Education </span></h1>
+                    
+                    {/* 👑 DYNAMIC HEADLINE: Changes to Welcome [Name] when registered! */}
+                    <h1 className="headline">
+                        {userName ? (
+                            <>Welcome <span className="gradient-text">{userName} !</span></>
+                        ) : (
+                            <>Providers of <span className="gradient-text">Holistic Education </span></>
+                        )}
+                    </h1>
+
                     <p className="subhead">Personalized coaching that blends clarity, accountability, and proven
                         systems—so you move from stuck to unstoppable in work and life.</p>
                     <div className="hero-actions">
                         <a href="#programs" className="btn-ghost">Explore Programs</a>
                     </div>
                     <div className="trust" aria-label="Trusted by list">
-                        <span>Founders</span>
+                        <span>Teachers</span>
                         <span>Leaders</span>
-                        <span>Creators</span>
+                        {/* <span>Creators</span> */}
                         <span>Students</span>
-                        <span>Teams</span>
+                        {/* <span>Teams</span> */}
                     </div>
                 </div>
 
@@ -47,17 +54,17 @@ const SimpleSlider = ({ isPaused }) => {
             
             <div className="container">
                 <div>
-                    <span className="eyebrow">SLIDE 2</span>
-                    <h1 className="headline">Second Slide Content</h1>
-                    <p className="subhead">This is the second slide of the slider.</p>
+                    <span className="eyebrow">EXPERT GUIDANCE • PROVEN RESULTS</span>
+                    <h1 className="headline">Crack JEE/BOARDS/BITSAT/NDA under highly experienced Faculties</h1>
+                    <p className="subhead">Learn from experienced educators who break down complex physics, chemistry, and math into simple, structured concepts built for competitive success.</p>
                 </div>
             </div>
             
             <div className="container">
                 <div>
-                    <span className="eyebrow">SLIDE 3</span>
-                    <h1 className="headline">Third Slide Content</h1>
-                    <p className="subhead">This is the third slide of the slider.</p>
+                    <span className="eyebrow">SMALL BATCHES • PERSONAL ATTENTION</span>
+                    <h1 className="headline">Transforming Potential into Performance</h1>
+                    <p className="subhead">With limited students per batch, daily doubt-clearing sessions, and regular test series, we ensure no student gets left behind in their preparation journey.</p>
                 </div>
             </div>
         </Slider>

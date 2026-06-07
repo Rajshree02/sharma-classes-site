@@ -7,20 +7,26 @@ import About from './components/About';
 import Footer from './components/Footer';
 
 function App() {
-  // 1. CHANGED: State now stores 'split', 'form', or false
   const [showRegister, setShowRegister] = useState(false);
+  // ✨ NEW STATE: Stores the student's name once they successfully register
+  const [userName, setUserName] = useState('');
+
+  // ✨ NEW FUNCTION: Closes the modal and saves the name to update the header title
+  const handleRegisterSuccess = (name) => {
+    setUserName(name);
+    setShowRegister(false); // Cleanly closes the popup modal background!
+  };
 
   return (
     <>
-      {/* 2. When clicking Contact us, open the "split" view */}
       <Header onRegisterClick={() => setShowRegister('split')} />
       
       <div className="slider-section">
-        <Slider isPaused={!!showRegister} />
+        {/* 🚀 PASSED USERNAME: Sending the name to the slider so it can change the title */}
+        <Slider isPaused={!!showRegister} userName={userName} />
       </div>
 
       <div className="programs-section">
-        {/* 3. When clicking Register here, open the pure "form" view */}
         <Programs onRegisterClick={() => setShowRegister('form')} />
       </div>
 
@@ -28,15 +34,12 @@ function App() {
         <About />
       </div>
 
-      {/* 4. Only show the modal if showRegister has a value */}
       {showRegister && (
         <div className="register-section">
-          {/* ADDED CLASSNAME DYNAMICALLY: Adds a special class if it's form-only mode */}
           <div className={`register-modal-content ${showRegister === 'form' ? 'form-only-mode' : ''}`}>
             
             <button className="close-btn" onClick={() => setShowRegister(false)}>✕ Close</button>
             
-            {/* 5. CONDITIONAL RENDER: Only show the info side if we are in 'split' mode */}
             {showRegister === 'split' && (
               <div className="modal-info-side">
                 <h3>Connect With Us</h3>
@@ -61,9 +64,10 @@ function App() {
               </div>
             )}
 
-            {/* RIGHT COLUMN: Always visible */}
+            {/* RIGHT COLUMN */}
             <div className="modal-form-side">
-              <Register />
+              {/* 🚀 PASSED PROP: Telling Register to run our success function when done */}
+              <Register onRegisterSuccess={handleRegisterSuccess} />
             </div>
 
           </div>
