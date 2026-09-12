@@ -7,7 +7,7 @@ const Hero = ({ onRegisterClick }) => {
       <div className="container hero-grid">
         <div className="hero-content">
           <span className="eyebrow">25+ YEARS OF EXCELLENCE</span>
-          <h1>Master Mathematics & Science with <span className="gradient-text">Harish Sharma</span></h1>
+          <h1>Master Mathematics with <span className="gradient-text">Harish Sharma</span></h1>
           <p className="subhead">
             Proven pedagogy by a VNIT alumnus. We focus on conceptual clarity and result-oriented coaching for JEE, BITSAT, and Board Exams.
           </p>
