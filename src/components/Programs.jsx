@@ -45,14 +45,6 @@ const Programs = ({ onRegisterClick }) => {
                     </article>
                 </div>
             </div>
-            <div className="hero-actions programs-cta">
-                <button
-                    className="btn-register"
-                    onClick={onRegisterClick}
-                >
-                    Register here
-                </button>
-            </div>
             </div>
         </section>
     );
