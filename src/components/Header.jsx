@@ -1,30 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/infinity_and_beyond.png';
 
-// 1. ADDED: { onRegisterClick } inside the brackets so this file can receive the trigger from App.jsx
 const Header = ({ onRegisterClick }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header>
       <div className="container nav">
         <div className="brand">
           <div className="logo" aria-hidden="true">
-              <img src={logo} alt="Sharma Classes Logo"/>
+            <img src={logo} alt="" />
           </div>
-          <a href="#" aria-label="Elevate Coaching Home">Sharma Classes</a>
+          <a href="#home" aria-label="Sharma Classes Home" onClick={closeMenu}>
+            Sharma Classes
+          </a>
         </div>
-        <nav aria-label="Primary">
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <nav aria-label="Primary" className={menuOpen ? 'open' : ''}>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#courses">Courses</a></li>
-            <li><a href="#about">About</a></li>
-            
-            {/* 2. CHANGED: Added onClick={onRegisterClick} and changed href to prevent scrolling */}
+            <li><a href="#home" onClick={closeMenu}>Home</a></li>
+            <li><a href="#courses" onClick={closeMenu}>Courses</a></li>
+            <li><a href="#about" onClick={closeMenu}>About</a></li>
             <li>
-              <a 
-                href="#" 
+              <a
+                href="#contact"
                 onClick={(e) => {
-                  e.preventDefault(); // Prevents the browser from jumping or reloading the page
-                  onRegisterClick();  // Flips the switch to TRUE in App.jsx!
+                  e.preventDefault();
+                  closeMenu();
+                  onRegisterClick();
                 }}
               >
                 Contact us

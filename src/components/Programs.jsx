@@ -45,21 +45,13 @@ const Programs = ({ onRegisterClick }) => {
                     </article>
                 </div>
             </div>
-            <div className="hero-actions">
-                {/* 2. CHANGED: Converted from an <a> tag to a <button> and attached the onClick trigger */}
-                <button 
-                    className="btn-register" 
+            <div className="hero-actions programs-cta">
+                <button
+                    className="btn-register"
                     onClick={onRegisterClick}
-                    style={{ 
-                    cursor: 'pointer', 
-                    border: 'none',
-                    fontSize: '19px',       /* ◄ Bumps up the text size (Default is likely 12px-14px) */
-                    fontWeight: '600',      /* ◄ Makes the text slightly bolder so it stands out */
-                    padding: '12px 28px'    /* ◄ Optional: Expands the pill padding slightly if it looks squished */
-                    }} 
->
-    Register here
-</button>
+                >
+                    Register here
+                </button>
             </div>
             </div>
         </section>

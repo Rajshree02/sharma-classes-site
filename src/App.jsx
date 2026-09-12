@@ -1,38 +1,29 @@
 import Register from './components/Register';
 import React, { useState } from 'react'; 
 import Header from './components/Header';
-import Slider from './components/Slider.jsx';
+import Hero from './components/Hero';
 import Programs from './components/Programs';
 import About from './components/About';
 import Footer from './components/Footer';
 
 function App() {
   const [showRegister, setShowRegister] = useState(false);
-  // ✨ NEW STATE: Stores the student's name once they successfully register
   const [userName, setUserName] = useState('');
 
-  // ✨ NEW FUNCTION: Closes the modal and saves the name to update the header title
   const handleRegisterSuccess = (name) => {
     setUserName(name);
-    setShowRegister(false); // Cleanly closes the popup modal background!
+    setShowRegister(false);
   };
 
   return (
-      <div id = "home">
+      <div id="home">
       <Header onRegisterClick={() => setShowRegister('split')} />
       
-      <div className="slider-section">
-        {/* 🚀 PASSED USERNAME: Sending the name to the slider so it can change the title */}
-        <Slider isPaused={!!showRegister} userName={userName} />
-      </div>
+      <Hero onRegisterClick={() => setShowRegister('split')} />
 
-      <div className="programs-section">
-        <Programs onRegisterClick={() => setShowRegister('form')} />
-      </div>
+      <Programs onRegisterClick={() => setShowRegister('form')} />
 
-      <div className="about-section">
-        <About />
-      </div>
+      <About />
 
       {showRegister && (
         <div className="register-section">
