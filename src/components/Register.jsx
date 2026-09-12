@@ -82,6 +82,21 @@ function Register({ onRegisterSuccess }) {
 
       <div style={{ textAlign: 'left' }}>
         <input 
+          type="text" 
+          name="Mobile" 
+          placeholder="Enter Mobile No" 
+          required 
+          value={formData.Mobile}
+          onChange={handleChange}
+          style={{ width: '100%', padding: '12px', background: '#1e293b', border: '1px solid #334155', borderRadius: '8px', color: '#fff' }}
+        />
+      </div>
+
+
+
+
+      <div style={{ textAlign: 'left' }}>
+        <input 
           type="email" 
           name="email" 
           placeholder="Enter Email Address" 
